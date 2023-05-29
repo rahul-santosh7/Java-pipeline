@@ -12,7 +12,7 @@ Defining jenkins file
 
 pipeline
 {
-node any{
+agent any{
 }
 tools
 {
