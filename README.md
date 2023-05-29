@@ -16,27 +16,33 @@ node any{
 }
 tools
 {
-Java:17
-maven:3
+jdk 'Java 17'
+maven 'Maven 3'
 }
 stages
 {
-stage 
-{
-
+  stage("clean workspace")
+    {
+    steps{
+        CleanWs()
+         }
+   stage ("git")
+      {
+       steps {
+           git branch : 'main', credential id : 'github' , url : "https://github.com/rahul-santosh7/Java-pipeline/tree/main
+           }
+        }
+   stage (" Building using maven")
+        {
+          steps {
+              sh "mvn clean package"
+                }
+         }
+  stage ("testing the application")
+         {
+           steps {
+              sh "mvn test"
+              }
+          }
 }
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
 }
