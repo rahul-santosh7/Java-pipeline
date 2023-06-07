@@ -9,11 +9,13 @@ pipeline{
 
     environment {
         APP_NAME = "Javaapp"
-        DOCKER_USER = "rahulsantosh13"
+        DOCKER_USERNAME = "rahulsantosh13"
         DOCKER_PASS = "dockerpass"
         RELEASE = "1.0.0"
         IMAGE_NAME = "${DOCKER_USER}" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+        DOCKER_REGISTRY = 'https://index.docker.io/v1/'
+        
 
     }
     
@@ -47,10 +49,14 @@ pipeline{
                 script {
                     docker.withRegistry('',DOCKER_PASS)
                     {
+                     sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASS} ${DOCKER_REGISTRY}"
+                    }
+                    {
                         docker_image= docker.build "${IMAGE_NAME}"
                     }
 
-                    docker.withRegistry('',DOCKER_PASS){
+                    docker.withRegistry('',DOCKER_PASS)
+                    {
                         docker_image.push("${IMAGE_TAG}")
                     }
                 }
