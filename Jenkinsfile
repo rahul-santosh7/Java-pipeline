@@ -18,7 +18,7 @@ pipeline{
     stages{
         stage("from scm"){
             steps{
-                git branch: 'main', url: 'https://github.com/rahul-santosh7/jenkins-project', credentialsId: 'github'
+                git branch: 'main', url: 'https://github.com/rahul-santosh7/Java-pipeline', credentialsId: 'github'
             }
         }
     }
