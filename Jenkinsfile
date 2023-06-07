@@ -1,6 +1,10 @@
 pipeline{
     agent{
+<<<<<<< HEAD
         label ""
+=======
+      label ''
+>>>>>>> 70afbd49afd049f80e3ed8913a6134ea6d224519
     }
     tools {
         jdk 'Java17'
@@ -19,6 +23,7 @@ pipeline{
             }
 
         }
+<<<<<<< HEAD
 
         stage("building java package"){
             steps{
@@ -31,6 +36,8 @@ pipeline{
                 sh "mvn test"
             }
         }
+=======
+>>>>>>> 70afbd49afd049f80e3ed8913a6134ea6d224519
     }
 }
   
