@@ -19,7 +19,6 @@ key= "terraform.tfstate"
 }
 
 provider "azurerm" {
-  tenant_id = "0c45565b-c823-4469-9b6b-30989afb7a2e"
   features {
     resource_group {
       prevent_deletion_if_contains_resources = false
