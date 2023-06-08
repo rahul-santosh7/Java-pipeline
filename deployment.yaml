@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: mynginx-Bluedeployment
+ name: updated
 spec:
   replicas: 2
   selector:
