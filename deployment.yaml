@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: mynginx-Bluedeployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-oldcode   # label should be same
+  template:
+   metadata:
+    labels:
+      app: nginx-oldcode    # label should be same
+   spec:
+    containers:
+    - name: nginx-container
+      image: rahulsantosh13/javaapp:1.0.0-30
+      ports:
+      - containerPort: 80
+      imagePullPolicy: IfNotPresent
