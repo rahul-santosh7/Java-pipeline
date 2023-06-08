@@ -25,7 +25,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
-  location = "East Us"
+  location = "West Us"
 }
 
 resource "azurerm_virtual_network" "aks_vnet" {
