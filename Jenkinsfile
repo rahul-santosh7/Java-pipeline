@@ -47,10 +47,7 @@ pipeline{
         stage("Building docker image"){
             steps{
                 script {
-                    docker.withRegistry('',DOCKER_PASS)
-                    {
-                     sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASS} ${DOCKER_REGISTRY}"
-                    }
+                    
                     docker.withRegistry('',DOCKER_PASS)
                     {
                         docker_image= docker.build "${IMAGE_NAME}"
