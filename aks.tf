@@ -11,10 +11,6 @@ terraform {
 terraform {
  backend "azurerm" {
 
-resource_group_name= "newresource123"
-storage_account_name= "statefile67"
-container_name = "rahul"
-key= "terraform.tfstate"
  }
 }
 
