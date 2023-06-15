@@ -14,7 +14,7 @@ spec:
    spec:
     containers:
     - name: nginx-container
-      image: rahulsantosh13/javaapp:1.0.0-30
+      image: rahulsantosh13/javaapp:1.0.0-32
       ports:
       - containerPort: 8080
       imagePullPolicy: IfNotPresent
